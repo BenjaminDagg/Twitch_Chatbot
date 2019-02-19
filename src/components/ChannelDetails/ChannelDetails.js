@@ -41,6 +41,7 @@ export  class ChannelDetails extends Component {
                     for (var i = 0; i < results.length;i++) {
                         if (results[i]._id == id) {
                             this.setState({channel:results[i]},() => {
+
                                 var chatbot = new ChatBot(this.state.channel.display_name);
                                 chatbot.client.on('chat', this.onChatHandler);
                                 this.setState({chatbot:chatbot});
@@ -71,12 +72,9 @@ export  class ChannelDetails extends Component {
 
     sendMessage() {
         var text = this.state.chatText;
+        console.log('in send message client');
 
-        if (!text || text.length < 1) {
-            return;
-        }
-
-        this.state.chatbot.sendMessage(text,this.state.repeatCount);
+        this.state.chatbot.sendMessage(text);
     }
 
     onTextChange(event) {

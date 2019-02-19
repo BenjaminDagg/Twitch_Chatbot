@@ -1,6 +1,6 @@
 const tmi = require('tmi.js');
 
-const password = "oauth:oicpoy8cq12tx9wvwycy4jp0twftaw"
+const password = "be3ap56atjfch4rk8i0xu4b6y3swp9";
 
 /*
 const opts = {
