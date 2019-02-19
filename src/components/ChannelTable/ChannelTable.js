@@ -80,9 +80,13 @@ export class ChannelTable extends Component {
             <div id="channel-table">
                 <SearchBar text={this.state.searchText} onTextChanged={this.onTextChanged}/>
                 <button onClick={this.search}>Search</button>
-                <PageButtons currentPage={this.state.page} onPageChange={this.onPageChanged} size={this.state.results.length}/>
+                {this.state.results.length > 0 &&
+                    <PageButtons currentPage={this.state.page} onPageChange={this.onPageChanged} size={this.state.results.length}/>
+                }
                 <ChannelList channels={pageList}/>
-                <PageButtons currentPage={this.state.page} onPageChange={this.onPageChanged} size={this.state.results.length}/>
+                {this.state.results.length > 0 &&
+                    <PageButtons currentPage={this.state.page} onPageChange={this.onPageChanged} size={this.state.results.length}/>
+                }
             </div>
         );
     }
