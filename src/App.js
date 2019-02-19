@@ -23,7 +23,7 @@ class App extends Component {
           <Router>
             <div>
                 <Route exact={true} path={"/"} component={ChannelTable} />
-                <Route path="/channel/:name" component={ChannelDetails}/>
+                <Route path="/channel/:id/:name" component={ChannelDetails}/>
             </div>
           </Router>
       </div>

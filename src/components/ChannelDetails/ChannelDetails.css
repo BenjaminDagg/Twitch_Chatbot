@@ -1,0 +1,13 @@
+#chat {
+
+    height: 400px;
+    overflow: scroll;
+    border: 1px solid black;
+    text-align:left;
+}
+
+#chat span {
+    width: 100%;
+    margin-top:5px;
+}
+

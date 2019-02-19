@@ -20,7 +20,7 @@ export  class ChannelTile extends Component {
 
         return (
             <div className="channel-tile">
-                <Link to={"/channel/" + this.props.channel.display_name}>
+                <Link to={"/channel/" + this.props.channel._id + "/" + this.props.channel.display_name}>
                     <div className="channel-tile-header">
                         <img src={this.props.channel.logo} />
                         <span>{this.props.channel.display_name}</span>
