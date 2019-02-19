@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import axios from "axios";
 import {SearchBar} from "../SearchBar/SearchBar";
+import {ChannelList} from "../ChannelList/ChannelList";
 
 const clientID = 'vcot0kpqo1jbrdodynosldxmimawiy';
 
@@ -29,7 +30,7 @@ export class ChannelTable extends Component {
     }
 
     search() {
-        var url = 'https://api.twitch.tv/kraken/search/channels?query=' + this.state.searchText;
+        var url = 'https://api.twitch.tv/kraken/search/channels?query=' + this.state.searchText + "&limit=100";
         var config = {
             headers: {
                 'Client-ID':clientID
@@ -44,16 +45,14 @@ export class ChannelTable extends Component {
 
     render() {
 
-        var results = this.state.results.map((res) => {
-            return <img src={res.logo} />
-        });
+
 
 
         return (
             <div id={"channel-table"}>
                 <SearchBar text={this.state.searchText} onTextChanged={this.onTextChanged}/>
                 <button onClick={this.search}>Search</button>
-                {results}
+                <ChannelList channels={this.state.results}/>
             </div>
         );
     }

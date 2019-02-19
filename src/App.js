@@ -12,18 +12,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-
-    var url = 'https://api.twitch.tv/kraken/search/channels?query=starcraft';
-    var config = {
-      headers: {
-        'Client-ID':clientID
-      }
-    };
-    axios.get(url,config)
-        .then(res => {
-          console.log(res);
-        })
-
   }
 
   render() {
